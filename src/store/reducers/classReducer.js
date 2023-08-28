@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import { ADD_CLASS, UPDATE_CLASS } from "../actions/types";
 
 const initialState = {

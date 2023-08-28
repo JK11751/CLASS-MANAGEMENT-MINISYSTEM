@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import { ADD_COURSE, COURSE_FAIL, UPDATE_COURSE } from "../actions/types";
 
 const initialState = {

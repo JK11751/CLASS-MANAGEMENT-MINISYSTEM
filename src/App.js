@@ -112,7 +112,7 @@ function App() {
           <Route path="/about-course/:slug" exact component={ViewCourse} />
           <Route path="/student/update/:slug" exact component={UpdateStudent} />
           <Route path="/student/:slug" exact component={ViewStudent} />
-          <Route path="/courses" component={Courses} exact />
+          <Route path="/courses" exact component={Courses} />
           <Route path="/course/update/:slug" exact component={UpdateCourse} />
           <Route component={HomeComponet} />
         </Switch>

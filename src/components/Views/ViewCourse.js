@@ -13,7 +13,7 @@ function ViewCourse() {
   const dispatch = useDispatch();
 
   const { courses, deleted } = useSelector((state) => state.cou);
-  const courseDetail = courses.filter(({ slug }) => slug == s_slug)[0];
+  const courseDetail = courses.filter(({ slug }) => slug === s_slug)[0];
   const { students } = useSelector((state) => state.stu);
   const [courseStudents, setCourseStudents] = useState("");
 
@@ -22,16 +22,17 @@ function ViewCourse() {
   useEffect(() => {
     if (courseDetail) {
       const studentList = students
+        // eslint-disable-next-line array-callback-return
         .map(({ student_course, student_name }) => {
           if (student_course.includes(courseDetail.course_name)) {
             return student_name.toUpperCase();
           }
         })
-        .filter((student) => student != undefined);
+        .filter((student) => student !== undefined);
 
       setCourseStudents(studentList);
     }
-  }, [courseDetail]);
+  }, [courseDetail, students]);
 
   useEffect(() => {
     if (deleted) {
@@ -46,7 +47,7 @@ function ViewCourse() {
         {courseDetail ? (
           <>
             <div className="one__student__left">
-              <img src={avatar} />
+              <img alt="" src={avatar} />
 
               <h1>{courseDetail.course_name.toUpperCase()}</h1>
             </div>

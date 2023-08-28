@@ -13,7 +13,7 @@ function ViewStudent() {
   const dispatch = useDispatch();
 
   const { students, deleted } = useSelector((state) => state.stu);
-  const studentDetail = students.filter(({ slug }) => slug == s_slug)[0];
+  const studentDetail = students.filter(({ slug }) => slug === s_slug)[0];
   const totalCourse = studentDetail.student_course.split(" ").length;
 
   const onDelete = (uid) => dispatch(deleteStudent(uid));
@@ -31,7 +31,7 @@ function ViewStudent() {
         {studentDetail ? (
           <>
             <div className="one__student__left">
-              <img src={avatar} />
+              <img alt="" src={avatar} />
 
               <h1>{studentDetail.student_name.toUpperCase()}</h1>
             </div>

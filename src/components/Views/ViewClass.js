@@ -9,16 +9,17 @@ const generator = new AvatarGenerator();
 const avatar = generator.generateRandomAvatar();
 
 function ViewClass() {
+  // eslint-disable-next-line no-unused-vars
   const history = useHistory();
   const dispatch = useDispatch();
   let { slug: s_slug } = useParams();
 
   const { students } = useSelector((state) => state.stu);
   const { classes, deleted } = useSelector((state) => state.cla);
-  const classDetail = classes.filter(({ slug }) => slug == s_slug)[0];
+  const classDetail = classes.filter(({ slug }) => slug === s_slug)[0];
 
   const numOfStudents = students.filter(
-    ({ student_class }) => student_class == classDetail.class_name
+    ({ student_class }) => student_class === classDetail.class_name
   );
 
   const onDelete = (uid) => dispatch(deleteClass(uid));
@@ -36,7 +37,7 @@ function ViewClass() {
         {classDetail ? (
           <>
             <div className="one__student__left">
-              <img src={avatar} />
+              <img alt="" src={avatar} />
 
               <h1>{classDetail.class_name.toUpperCase()}</h1>
             </div>

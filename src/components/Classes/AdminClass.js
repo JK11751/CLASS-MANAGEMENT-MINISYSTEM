@@ -55,7 +55,7 @@ const AdminClass = () => {
                 value={className}
               />
 
-              {errID == "CLASS__ERROR" ? (
+              {errID === "CLASS__ERROR" ? (
                 <div
                   className="err-msgs"
                   style={{ color: "red", marginTop: "10px" }}

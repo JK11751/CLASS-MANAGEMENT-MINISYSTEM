@@ -73,7 +73,7 @@ const UpdateClass = () => {
                     {...{ onChange }}
                   />
 
-                  {errID == "UPDATE_CLASS_ERROR" ? (
+                  {errID === "UPDATE_CLASS_ERROR" ? (
                     <div
                       className="err-msgs"
                       style={{ color: "red", marginTop: "10px" }}

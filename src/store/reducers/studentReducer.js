@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import { ADD_STUDENT, DELETE_STUDENT, UPDATE_STUDENT } from "../actions/types";
 
 const initialState = {

@@ -47,7 +47,7 @@ router.put("/", (req, res) => {
   const { course_name, students, slug } = req.body;
   const newSlug = slugify(course_name).toLowerCase();
 
-  if (students.length == 0)
+  if (students.length === 0)
     return res.status(400).json({ msg: "Please add students to this course" });
 
   var updatedata =

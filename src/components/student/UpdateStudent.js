@@ -19,7 +19,7 @@ const UpdateStudent = () => {
   const courseList = courses.map((c) => c.course_name.toUpperCase());
 
   let { slug: s_slug } = useParams();
-  const studentDetail = students.filter(({ slug }) => slug == s_slug)[0];
+  const studentDetail = students.filter(({ slug }) => slug === s_slug)[0];
 
   const { msg: errMsg, id: errID } = useSelector((state) => state.error);
   const [studentName, setStudentName] = useState("");
@@ -45,7 +45,7 @@ const UpdateStudent = () => {
       setStudentAge(studentDetail.student_age);
       setStudentClass(studentDetail.student_class.toUpperCase());
     }
-  }, [studentDetail]);
+  }, [courseList, studentDetail]);
 
   useEffect(() => {
     if (updated) {
@@ -91,7 +91,7 @@ const UpdateStudent = () => {
         {studentDetail ? (
           <>
             <div className="class__wrapper__left">
-              <img src={avatar} />
+              <img alt="" src={avatar} />
 
               <ul>
                 <li> Create a student</li>
@@ -148,7 +148,7 @@ const UpdateStudent = () => {
                     </select>
                   </div>
 
-                  {errID == "UPDATE_ERROR" ? (
+                  {errID === "UPDATE_ERROR" ? (
                     <div
                       className="err-msgs"
                       style={{ color: "red", marginTop: "10px" }}

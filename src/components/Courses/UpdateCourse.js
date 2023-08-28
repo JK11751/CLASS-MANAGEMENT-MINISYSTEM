@@ -34,7 +34,7 @@ const UpdateStudent = () => {
           }
           return null;
         })
-        .filter((std) => std != undefined);
+        .filter((std) => std !== undefined);
 
       if (students.length > 0)
         new Tagify(input1, {
@@ -53,7 +53,7 @@ const UpdateStudent = () => {
     if (courseDetail) {
       setCourseName(courseDetail.course_name.toUpperCase());
     }
-  }, [courseDetail]);
+  }, [courseDetail, students]);
 
   useEffect(() => {
     if (updated) {
@@ -91,7 +91,7 @@ const UpdateStudent = () => {
         {courseDetail ? (
           <>
             <div className="class__wrapper__left">
-              <img src={avatar} />
+              <img alt="" src={avatar} />
 
               <ul>
                 <li> Update a course</li>
@@ -125,7 +125,7 @@ const UpdateStudent = () => {
                     value={`${courseDetail.course_students.toUpperCase()}`}
                   />
 
-                  {errID == "UPDATE_COURSE_ERROR" ? (
+                  {errID === "UPDATE_COURSE_ERROR" ? (
                     <div
                       className="err-msgs"
                       style={{ color: "red", marginTop: "10px" }}

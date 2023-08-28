@@ -32,7 +32,7 @@ const AdminStudent = () => {
         highlightFirst: true,
       },
     });
-  }, []);
+  }, [courseList]);
 
   useEffect(() => {
     if (created) {
@@ -79,7 +79,7 @@ const AdminStudent = () => {
       <AppNavbar />
       <div className="class__wrapper">
         <div className="class__wrapper__left">
-          <img src={avatar} />
+          <img alt="" src={avatar} />
 
           <ul>
             <li> Create a student</li>
@@ -132,7 +132,7 @@ const AdminStudent = () => {
                 </select>
               </div>
 
-              {errID == "STUDENT__ERROR" ? (
+              {errID === "STUDENT__ERROR" ? (
                 <div
                   className="err-msgs"
                   style={{ color: "red", marginTop: "10px" }}
